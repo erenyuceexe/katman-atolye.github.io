@@ -2,6 +2,8 @@
 
 STL, OBJ ve diğer 3D model dosyalarını yükleme veya hazır şablon seçme, baskı kalitesi belirleme ve iletişim bilgilerini alarak sipariş isteğini e-posta ileten statik 3D baskı sipariş sitesi.
 
+Canlı site: `https://erenyuceexe.github.io/nesnehane/`
+
 ## GitHub Pages
 
 Bu repo, `main` dalına yapılan her push'ta `.github/workflows/pages.yml` ile GitHub Pages'e deploy edilir. Workflow, Pages özelliğini mümkün olduğunda otomatik etkinleştirir; GitHub hesabı izin vermezse Repository Settings → Pages → Source bölümünde **GitHub Actions** seçilmelidir.
