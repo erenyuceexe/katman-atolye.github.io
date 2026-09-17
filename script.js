@@ -9,6 +9,9 @@ const summarySub = document.querySelector("#summarySub");
 const summaryQuality = document.querySelector("#summaryQuality");
 const summaryContact = document.querySelector("#summaryContact");
 const successMessage = document.querySelector("#successMessage");
+const templateList = document.querySelector("#templateList");
+const templateCount = document.querySelector("#templateCount");
+let selectedTemplate = null;
 
 function setModel(name, detail = "Hazır şablon") {
   summaryModel.textContent = name;
@@ -18,9 +21,52 @@ function setModel(name, detail = "Hazır şablon") {
   });
 }
 
+function templateShapeClass(category = "") {
+  if (category.includes("saks")) return "shape-pot";
+  if (category.includes("kablo")) return "shape-clip";
+  return "shape-candle";
+}
+
+function renderTemplates(templates) {
+  templateCount.textContent = `${templates.length} ADET`;
+  templateList.innerHTML = "";
+  if (!templates.length) {
+    templateList.innerHTML = '<p class="template-loading">Henüz hazır şablon eklenmedi.</p>';
+    return;
+  }
+  templates.forEach((item) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "template";
+    button.dataset.template = item.name;
+    button.innerHTML = `<span class="template-shape ${templateShapeClass(item.category)}"></span><span><b></b><small></small></span><span class="select-mark">+</span>`;
+    button.querySelector("b").textContent = item.name;
+    button.querySelector("small").textContent = `${item.category} / ${item.size}`;
+    button.addEventListener("click", () => {
+      fileInput.value = "";
+      selectedTemplate = item;
+      fileName.textContent = `Şablon seçildi · ${item.file}`;
+      setModel(item.name, `${item.category} · GitHub şablonu`);
+    });
+    templateList.appendChild(button);
+  });
+}
+
+fetch("templates/templates.json")
+  .then((response) => {
+    if (!response.ok) throw new Error("templates_unavailable");
+    return response.json();
+  })
+  .then(renderTemplates)
+  .catch(() => {
+    templateCount.textContent = "HATA";
+    templateList.innerHTML = '<p class="template-loading">Şablon listesi yüklenemedi.</p>';
+  });
+
 fileInput.addEventListener("change", () => {
   const file = fileInput.files[0];
   if (!file) return;
+  selectedTemplate = null;
   const extension = file.name.split(".").pop().toLowerCase();
   if (file.size > MAX_FILE_SIZE) {
     fileInput.value = "";
@@ -77,6 +123,8 @@ form.addEventListener("submit", (event) => {
   data.set("_captcha", "false");
   data.set("model_name", summaryModel.textContent);
   data.set("model_file_name", file ? file.name : "Hazır şablon");
+  data.set("template_file", selectedTemplate ? selectedTemplate.file : "Kullanıcı yüklemesi");
+  data.set("template_url", selectedTemplate ? selectedTemplate.url : "");
 
   fetch(FORM_ENDPOINT, { method: "POST", body: data, headers: { Accept: "application/json" } })
     .then((response) => {
@@ -86,6 +134,7 @@ form.addEventListener("submit", (event) => {
     .then(() => {
       successMessage.classList.add("show");
       form.reset();
+      selectedTemplate = null;
       setModel("Model seçilmedi", "3D model veya şablon bekleniyor");
       fileName.textContent = "Henüz dosya seçilmedi";
     })

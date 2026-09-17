@@ -1,0 +1,9 @@
+solid geometrik_mumluk
+  facet normal 0 0 0
+    outer loop
+      vertex 0 0 0
+      vertex 10 0 0
+      vertex 0 10 0
+    endloop
+  endfacet
+endsolid geometrik_mumluk

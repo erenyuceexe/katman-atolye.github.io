@@ -24,7 +24,7 @@ web
 
 ## Capabilities and Constraints
 
-- Model source: upload a supported 3D model file (STL, OBJ, 3MF, PLY, FBX, GLTF, GLB, DAE, or AMF) up to 100 MB, or select an available template.
+- Model source: upload a supported 3D model file (STL, OBJ, 3MF, PLY, FBX, GLTF, GLB, DAE, or AMF) up to 100 MB, or select a template loaded from the repository's `templates/` catalog.
 - Quality choices: Economy, Fast, and Quality.
 - Contact fields: name, email, phone, and optional order note.
 - No payment or automatic quote is promised.
