@@ -8,7 +8,7 @@ web
 
 ## Users
 
-[Inferred from the request] People who have an STL file or want to choose a ready-made model, and need a quick way to request a quote for a 3D print.
+[Inferred from the request] People who have a 3D model file or want to choose a ready-made model, and need a quick way to request a quote for a 3D print.
 
 ## Product Purpose
 
@@ -24,11 +24,11 @@ web
 
 ## Capabilities and Constraints
 
-- Model source: upload an STL file or select an available template.
+- Model source: upload a supported 3D model file (STL, OBJ, 3MF, PLY, FBX, GLTF, GLB, DAE, or AMF) up to 100 MB, or select an available template.
 - Quality choices: Economy, Fast, and Quality.
 - Contact fields: name, email, phone, and optional order note.
 - No payment or automatic quote is promised.
-- The owner's email address is an open deployment decision and must be configured before launch.
+- Order requests are sent to yagizerenyuce@gmail.com through a static-form upload endpoint; the endpoint's own attachment limit may be lower than the browser-side 100 MB limit.
 
 ## Product Principles
 

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="STL dosyanı gönder, baskı kalitesini seç. Baskı atölyenden net bir dönüş al." />
+    <meta name="description" content="STL, OBJ ve diğer 3D model dosyalarını gönder, baskı kalitesini seç. Baskı atölyenden net bir dönüş al." />
     <title>Katman Atölye — 3D baskı siparişi</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -56,15 +56,15 @@
           <form class="order-form" id="orderForm">
             <div class="section-heading">
               <div><span class="step-number">01</span><h2>Modelini seç</h2></div>
-              <span class="section-note">STL / ŞABLON</span>
+              <span class="section-note">3D MODEL / ŞABLON</span>
             </div>
 
             <div class="model-choice-grid">
               <label class="upload-zone" for="stlFile">
-                <input id="stlFile" type="file" accept=".stl,model/stl" />
+                <input id="stlFile" name="model_file" type="file" accept=".stl,.obj,.3mf,.ply,.fbx,.gltf,.glb,.dae,.amf,model/stl,model/obj,model/gltf+json,model/gltf-binary" />
                 <span class="upload-icon">↑</span>
-                <strong>STL dosyası yükle</strong>
-                <small>Dosyayı buraya bırak veya seç <b>· maks. 25 MB</b></small>
+                <strong>3D model dosyası yükle</strong>
+                <small>STL, OBJ, 3MF, PLY, FBX, GLTF ve daha fazlası <b>· maks. 100 MB</b></small>
                 <span class="file-name" id="fileName">Henüz dosya seçilmedi</span>
               </label>
               <div class="templates">
@@ -113,14 +113,14 @@
               <label><span>Notun <small>(opsiyonel)</small></span><textarea name="note" rows="1" placeholder="Renk, adet veya aklındaki detay..."></textarea></label>
             </div>
             <button class="submit-button" type="submit"><span>Sipariş isteğini gönder</span><b>→</b></button>
-            <p class="form-footnote">Gönderdiğinde dosyan ve bilgilerin atölye e-postasına hazırlanır. Fiyat ve teslim süresini kontrol edip sana dönüş yaparım.</p>
+            <p class="form-footnote">Dosyan güvenli bir form yüklemesiyle e-postaya eklenir; dosya adı ve sipariş bilgilerin birlikte gelir.</p>
           </form>
 
           <aside class="order-summary">
             <div class="summary-top"><span class="mono-label">İŞ EMRİ ÖZETİ</span><span class="summary-status"><i></i> TASLAK</span></div>
             <div class="summary-model">
               <span class="summary-art" id="summaryArt"><span></span></span>
-              <div><span class="mono-label">MODEL</span><strong id="summaryModel">Model seçilmedi</strong><small id="summarySub">STL veya şablon bekleniyor</small></div>
+              <div><span class="mono-label">MODEL</span><strong id="summaryModel">Model seçilmedi</strong><small id="summarySub">3D model veya şablon bekleniyor</small></div>
             </div>
             <dl class="summary-details">
               <div><dt>BASKI AYARI</dt><dd id="summaryQuality">Hızlı <span>0.20 mm</span></dd></div>
@@ -139,7 +139,7 @@
       <footer><span>© 2026 KATMAN ATÖLYE</span><span>STL → KATMAN → NESNE</span></footer>
     </div>
     <div class="success-message" id="successMessage" role="status" aria-live="polite">
-      <span class="success-icon">✓</span><div><strong>İstek hazırlandı.</strong><span>E-posta uygulaman açılıyor; son adımda gönder tuşuna bas.</span></div><button type="button" id="closeSuccess" aria-label="Mesajı kapat">×</button>
+      <span class="success-icon">✓</span><div><strong>İstek gönderildi.</strong><span>Dosyan ve sipariş bilgilerin atölye e-postasına ulaştı.</span></div><button type="button" id="closeSuccess" aria-label="Mesajı kapat">×</button>
     </div>
     <script src="script.js"></script>
   </body>
