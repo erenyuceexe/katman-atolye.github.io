@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="STL dosyanı gönder, baskı kalitesini seç. Baskı atölyenden net bir dönüş al." />
+    <title>Katman Atölye — 3D baskı siparişi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Syne:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Katman Atölye ana sayfa">
+          <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+          <span>KATMAN<span class="brand-sub">ATÖLYE</span></span>
+        </a>
+        <div class="topbar-meta">
+          <span class="live-dot"></span>
+          <span>ÇEVRİMİÇİ BASKI SIRASI</span>
+        </div>
+      </header>
+
+      <main>
+        <!--
+          THESIS: A print request should feel like dropping a well-labeled job ticket into a friendly workshop.
+          OWN-WORLD: Blueprint blue, ink-black, paper-white and safety orange; ruled lines and stamped status details.
+          STORY: Choose a model, pick a finish, send a complete job ticket for human confirmation.
+          FIRST VIEWPORT: The workbench header frames the offer, then the ticket starts immediately with a live summary.
+          FORM: Operator-first intake sheet, chosen for clarity over a conventional marketing hero.
+        -->
+        <section class="intro">
+          <div class="intro-copy">
+            <p class="mono-label">KÜÇÜK FİKİRLER / GERÇEK NESNELER</p>
+            <h1>Fikrini katman<br /><em>katman</em> üretelim.</h1>
+            <p class="intro-lede">STL dosyanı gönder ya da hazır modellerden birini seç. Baskı ayarını işaretle; gerisini birlikte netleştirelim.</p>
+            <div class="intro-proof">
+              <span>01 <b>Modelini seç</b></span>
+              <span>02 <b>Kaliteyi belirle</b></span>
+              <span>03 <b>Atölyeden dönüş al</b></span>
+            </div>
+          </div>
+          <div class="workbench-visual" aria-label="Katmanlı 3D baskı illüstrasyonu">
+            <div class="blueprint-grid"></div>
+            <div class="model-orbit orbit-one"></div>
+            <div class="model-orbit orbit-two"></div>
+            <div class="model-stack"><span></span><span></span><span></span><span></span><span></span></div>
+            <span class="visual-tag tag-top">OBJ_042 / READY</span>
+            <span class="visual-tag tag-bottom">Z 0.20 MM</span>
+          </div>
+        </section>
+
+        <section class="order-layout" id="siparis">
+          <form class="order-form" id="orderForm">
+            <div class="section-heading">
+              <div><span class="step-number">01</span><h2>Modelini seç</h2></div>
+              <span class="section-note">STL / ŞABLON</span>
+            </div>
+
+            <div class="model-choice-grid">
+              <label class="upload-zone" for="stlFile">
+                <input id="stlFile" type="file" accept=".stl,model/stl" />
+                <span class="upload-icon">↑</span>
+                <strong>STL dosyası yükle</strong>
+                <small>Dosyayı buraya bırak veya seç <b>· maks. 25 MB</b></small>
+                <span class="file-name" id="fileName">Henüz dosya seçilmedi</span>
+              </label>
+              <div class="templates">
+                <div class="templates-head"><span>Hazır şablonlar</span><span class="mono-label">3 ADET</span></div>
+                <div class="template-list">
+                  <button type="button" class="template" data-template="Masaüstü saksı">
+                    <span class="template-shape shape-pot"></span><span><b>Masaüstü saksı</b><small>organik / 120 mm</small></span><span class="select-mark">+</span>
+                  </button>
+                  <button type="button" class="template" data-template="Kablo düzenleyici">
+                    <span class="template-shape shape-clip"></span><span><b>Kablo düzenleyici</b><small>modüler / 60 mm</small></span><span class="select-mark">+</span>
+                  </button>
+                  <button type="button" class="template" data-template="Geometrik mumluk">
+                    <span class="template-shape shape-candle"></span><span><b>Geometrik mumluk</b><small>dekoratif / 80 mm</small></span><span class="select-mark">+</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <div class="section-heading quality-heading">
+              <div><span class="step-number">02</span><h2>Baskı karakterini seç</h2></div>
+              <span class="section-note">ÜÇ AYAR</span>
+            </div>
+            <div class="quality-options">
+              <label class="quality-card">
+                <input type="radio" name="quality" value="Ekonomi" />
+                <span class="quality-card-content"><b>Ekonomi</b><small>Hızlı prototip ve denemeler için.</small><span class="quality-meta">0.28 MM <i>~</i> HIZLI</span></span><span class="radio-dot"></span>
+              </label>
+              <label class="quality-card selected">
+                <input type="radio" name="quality" value="Hızlı" checked />
+                <span class="quality-card-content"><b>Hızlı</b><small>Günlük kullanım için dengeli seçim.</small><span class="quality-meta">0.20 MM <i>~</i> DENGELİ</span></span><span class="radio-dot"></span>
+              </label>
+              <label class="quality-card">
+                <input type="radio" name="quality" value="Kalite" />
+                <span class="quality-card-content"><b>Kalite</b><small>Detayların öne çıktığı temiz yüzey.</small><span class="quality-meta">0.12 MM <i>~</i> DETAYLI</span></span><span class="radio-dot"></span>
+              </label>
+            </div>
+
+            <div class="section-heading contact-heading">
+              <div><span class="step-number">03</span><h2>İletişim bilgilerin</h2></div>
+              <span class="section-note">DÖNÜŞ İÇİN</span>
+            </div>
+            <div class="contact-grid">
+              <label><span>Adın soyadın</span><input name="name" required placeholder="Ada Yılmaz" /></label>
+              <label><span>E-posta</span><input name="email" type="email" required placeholder="ada@ornek.com" /></label>
+              <label><span>Telefon <small>(opsiyonel)</small></span><input name="phone" type="tel" placeholder="+90 5__ ___ __ __" /></label>
+              <label><span>Notun <small>(opsiyonel)</small></span><textarea name="note" rows="1" placeholder="Renk, adet veya aklındaki detay..."></textarea></label>
+            </div>
+            <button class="submit-button" type="submit"><span>Sipariş isteğini gönder</span><b>→</b></button>
+            <p class="form-footnote">Gönderdiğinde dosyan ve bilgilerin atölye e-postasına hazırlanır. Fiyat ve teslim süresini kontrol edip sana dönüş yaparım.</p>
+          </form>
+
+          <aside class="order-summary">
+            <div class="summary-top"><span class="mono-label">İŞ EMRİ ÖZETİ</span><span class="summary-status"><i></i> TASLAK</span></div>
+            <div class="summary-model">
+              <span class="summary-art" id="summaryArt"><span></span></span>
+              <div><span class="mono-label">MODEL</span><strong id="summaryModel">Model seçilmedi</strong><small id="summarySub">STL veya şablon bekleniyor</small></div>
+            </div>
+            <dl class="summary-details">
+              <div><dt>BASKI AYARI</dt><dd id="summaryQuality">Hızlı <span>0.20 mm</span></dd></div>
+              <div><dt>İLETİŞİM</dt><dd id="summaryContact">Bilgilerin bekleniyor</dd></div>
+            </dl>
+            <div class="summary-divider"></div>
+            <p class="summary-message">Dosyanı ve bilgilerini aldığımda modeli kontrol eder, net fiyat ve teslim zamanını e-posta ile paylaşırım.</p>
+            <div class="summary-stamp">ÜRETİME<br />HAZIR</div>
+          </aside>
+        </section>
+
+        <section class="trust-strip">
+          <span>ŞEFFAF İLETİŞİM</span><i></i><span>ÖNCE KONTROL, SONRA BASKI</span><i></i><span>HER MODEL İÇİN BİREBİR DÖNÜŞ</span>
+        </section>
+      </main>
+      <footer><span>© 2026 KATMAN ATÖLYE</span><span>STL → KATMAN → NESNE</span></footer>
+    </div>
+    <div class="success-message" id="successMessage" role="status" aria-live="polite">
+      <span class="success-icon">✓</span><div><strong>İstek hazırlandı.</strong><span>E-posta uygulaman açılıyor; son adımda gönder tuşuna bas.</span></div><button type="button" id="closeSuccess" aria-label="Mesajı kapat">×</button>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
