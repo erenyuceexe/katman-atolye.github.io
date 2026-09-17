@@ -10,17 +10,19 @@
 
 ## Tokens
 
-- Ink: `#10151b`
-- Workshop blue: `#0b3a5b`
-- Blueprint: `#dceaf2`
-- Paper: `#f7f8f5`
-- Signal orange: `#ff7043`
-- Utility green: `#b9e769`
-- Fonts: Syne for display and UI; IBM Plex Mono for labels and statuses.
+- Ink: `#100b17`
+- Plum: `#1a1026`
+- Panel: `#21132f`
+- Violet: `#8d5cff`
+- Fuchsia: `#fa3dba`
+- Lime: `#c9fa63`
+- Cream: `#f9f4eb`
+- Muted: `#b7aebe`
+- Fonts: Newsreader for display, DM Sans for UI, and IBM Plex Mono for labels and statuses.
 
 ## Rules
 
-- Use squared corners with a small 6px radius; cards should feel like forms, not floating app tiles.
-- Keep the primary action orange and the operator status green.
+- Keep the dark plum canvas, cream text, lime primary action, and fuchsia interaction accent consistent with the Reyna reference palette.
+- Prefer thin rules, open space, and restrained panels over decorative cards.
 - Use monospaced labels only for status, metadata, and measurements.
 - Responsive layout collapses the job ticket and live summary into one column below 900px.
