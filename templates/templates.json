@@ -1,23 +1,10 @@
 [
   {
-    "name": "Masaüstü saksı",
-    "category": "organik",
-    "size": "120 mm",
-    "file": "masaustu-saksi.stl",
-    "url": "templates/masaustu-saksi.stl"
-  },
-  {
-    "name": "Kablo düzenleyici",
-    "category": "modüler",
-    "size": "60 mm",
-    "file": "kablo-duzenleyici.stl",
-    "url": "templates/kablo-duzenleyici.stl"
-  },
-  {
-    "name": "Geometrik mumluk",
-    "category": "dekoratif",
-    "size": "80 mm",
-    "file": "geometrik-mumluk.stl",
-    "url": "templates/geometrik-mumluk.stl"
+    "name": "Takı Askısı",
+    "category": "Düzenleyici",
+    "size": "İsteğe bağlı",
+    "file": "tree_with_tray.stl",
+    "url": "templates/tree_with_tray.stl"
   }
+
 ]
