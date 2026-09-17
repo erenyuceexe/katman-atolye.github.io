@@ -6,6 +6,11 @@
 
 web
 
+## Brand Commitments
+
+- Product name: Nesnehane.
+- Voice: approachable, clear, and human; technical details remain understandable.
+
 ## Users
 
 [Inferred from the request] People who have a 3D model file or want to choose a ready-made model, and need a quick way to request a quote for a 3D print.
