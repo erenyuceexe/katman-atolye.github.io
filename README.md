@@ -4,7 +4,7 @@ STL, OBJ ve diğer 3D model dosyalarını yükleme veya hazır şablon seçme, b
 
 ## GitHub Pages
 
-Bu repo, `main` dalına yapılan her push'ta `.github/workflows/pages.yml` ile GitHub Pages'e deploy edilir. Repository Settings → Pages → Source bölümünde **GitHub Actions** seçili olmalıdır.
+Bu repo, `main` dalına yapılan her push'ta `.github/workflows/pages.yml` ile GitHub Pages'e deploy edilir. Workflow, Pages özelliğini mümkün olduğunda otomatik etkinleştirir; GitHub hesabı izin vermezse Repository Settings → Pages → Source bölümünde **GitHub Actions** seçilmelidir.
 
 ## E-posta adresini ayarlama
 
